@@ -150,25 +150,25 @@ public class GameService {
         // Check rows
         for (int row = 0; row < boardSize; row++) {
             if (checkLine(boardState, boardSize, row, 0, 0, 1)) {
-                return boardState.charAt(row * boardSize);
+                return String.valueOf(boardState.charAt(row * boardSize));
             }
         }
         
         // Check columns
         for (int col = 0; col < boardSize; col++) {
             if (checkLine(boardState, boardSize, 0, col, 1, 0)) {
-                return boardState.charAt(col);
+                return String.valueOf(boardState.charAt(col));
             }
         }
         
         // Check main diagonal
         if (checkLine(boardState, boardSize, 0, 0, 1, 1)) {
-            return boardState.charAt(0);
+            return String.valueOf(boardState.charAt(0));
         }
         
         // Check anti-diagonal
         if (checkLine(boardState, boardSize, 0, boardSize - 1, 1, -1)) {
-            return boardState.charAt(boardSize - 1);
+            return String.valueOf(boardState.charAt(boardSize - 1));
         }
         
         // Check for draw
